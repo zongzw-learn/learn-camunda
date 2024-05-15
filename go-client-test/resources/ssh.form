@@ -1,0 +1,66 @@
+{
+  "components": [
+    {
+      "text": "# SSH Host Information",
+      "label": "Text view",
+      "type": "text",
+      "layout": {
+        "row": "Row_1ywl2yf",
+        "columns": null
+      },
+      "id": "Field_02ljc0m"
+    },
+    {
+      "label": "Host Name or IP Address",
+      "type": "textfield",
+      "layout": {
+        "row": "Row_129a3io",
+        "columns": 10
+      },
+      "id": "Field_09ctf6j",
+      "key": "hostname"
+    },
+    {
+      "label": "Username",
+      "type": "textfield",
+      "layout": {
+        "row": "Row_1v2l8jh",
+        "columns": 5
+      },
+      "id": "Field_0sfkwc5",
+      "key": "username",
+      "defaultValue": "root"
+    },
+    {
+      "label": "Password",
+      "type": "textfield",
+      "layout": {
+        "row": "Row_1v2l8jh",
+        "columns": 5
+      },
+      "id": "Field_0l869gj",
+      "key": "password",
+      "defaultValue": "default"
+    },
+    {
+      "label": "Enter Command:",
+      "type": "textfield",
+      "layout": {
+        "row": "Row_015oevw",
+        "columns": 10
+      },
+      "id": "Field_11lbae4",
+      "key": "command",
+      "defaultValue": "pwd"
+    }
+  ],
+  "type": "default",
+  "id": "ssh",
+  "executionPlatform": "Camunda Cloud",
+  "executionPlatformVersion": "8.5.0",
+  "exporter": {
+    "name": "Camunda Modeler",
+    "version": "5.23.0"
+  },
+  "schemaVersion": 16
+}
