@@ -224,11 +224,13 @@ func ExecuteCommand(hostname, username, password, command string) (string, error
 	if err != nil {
 		return "", fmt.Errorf("failed to dial: %s", err)
 	}
+	defer connection.Close()
 
 	session, err := connection.NewSession()
 	if err != nil {
 		return "", fmt.Errorf("failed to create session: %s", err)
 	}
+	defer session.Close()
 
 	modes := ssh.TerminalModes{
 		ssh.ECHO:          0,     // disable echoing

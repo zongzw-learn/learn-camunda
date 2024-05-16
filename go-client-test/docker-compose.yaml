@@ -1,0 +1,8 @@
+version: '3'
+services:
+  zeebe-sshcmd:
+    image: zongzw/zeebe-sshcmd:latest-arm64-20240516-100954
+    env_file:
+      - .env
+
+# docker-compose up -d --remove-orphans --force-recreate

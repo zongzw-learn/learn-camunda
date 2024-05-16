@@ -1,0 +1,14 @@
+# docker buildx build -t zongzw/zeebe-sshcmd:latest -f build/Dockerfile-arm64v8 .
+
+# FROM alpine:3.18.0
+FROM arm64v8/alpine:3.18.4
+# FROM arm64v8/ubuntu:latest
+
+COPY  sshcmd-arm64 /
+
+RUN chmod 755 /sshcmd-arm64
+
+RUN date -Iseconds > /build
+
+CMD /sshcmd-arm64
+

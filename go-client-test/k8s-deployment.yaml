@@ -1,0 +1,33 @@
+---
+
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: zeebe-sshcmd
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: zeebe-sshcmd-pod
+  template:
+    metadata:
+      name: zeebe-sshcmd-pod
+      labels:
+        app: zeebe-sshcmd-pod
+    spec:
+      containers:
+        # kubectl logs -f deployment/zeebe-sshcmd -c zeebe-sshcmd-pod -n kube-system
+        - name: zeebe-sshcmd-pod
+          image: zongzw/zeebe-sshcmd:latest-arm64-20240516-100954
+          imagePullPolicy: IfNotPresent
+          env:
+            - name: ZEEBE_ADDRESS
+              value: xxxx
+            - name: ZEEBE_CLIENT_ID
+              value: yyyy
+            - name: ZEEBE_CLIENT_SECRET
+              value: zzzz
+            - name: ZEEBE_AUTHORIZATION_SERVER_URL
+              value: https://login.cloud.camunda.io/oauth/token
+            - name: ZEEBE_TOKEN_AUDIENCE
+              value: zeebe.camunda.io
